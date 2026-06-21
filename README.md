@@ -13,14 +13,14 @@ Based on: https://github.com/Fred78290/nct6687d
 2. Click **Install Plugin** (top-right)
 3. Paste this URL:
    ```
-   https://raw.githubusercontent.com/ich777/unraid-nct6687-driver/master/nct6687-driver.plg
+   https://raw.githubusercontent.com/Tareku99/unraid-nct6687-driver/master/nct6687-driver.plg
    ```
 4. Click **Install**
 
 ### Via command line
 ```sh
 wget -O /boot/config/plugins/nct6687-driver.plg \
-  https://raw.githubusercontent.com/ich777/unraid-nct6687-driver/master/nct6687-driver.plg
+  https://raw.githubusercontent.com/Tareku99/unraid-nct6687-driver/master/nct6687-driver.plg
 /usr/local/emhttp/plugins/plugin/install.plg /boot/config/plugins/nct6687-driver.plg
 ```
 
