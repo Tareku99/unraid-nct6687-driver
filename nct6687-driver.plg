@@ -3,7 +3,6 @@
   <!ENTITY name      "nct6687-driver">
   <!ENTITY author    "ich777">
   <!ENTITY version   "2026.06.21">
-  <!ENTITY gitURL    "https://github.com/ich777/unraid-nct6687-driver/raw/master">
   <!ENTITY pluginURL "https://raw.githubusercontent.com/ich777/unraid-nct6687-driver/master/nct6687-driver.plg">
   <!ENTITY plugin    "/boot/config/plugins/nct6687-driver">
   <!ENTITY emhttp    "/usr/local/emhttp/plugins/nct6687-driver">
