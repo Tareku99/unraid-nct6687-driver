@@ -14,6 +14,10 @@
 
 <CHANGES>
 
+###2026.06.21
+- Flatten XML entities to fix install failure on some Unraid systems
+- Add Dynamix System Autofan example to plugin README
+
 ###2025.05.12
 - Prevent installation from NCT6683 module on boot
 
@@ -58,8 +62,24 @@ rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version
 <INLINE>
 **Nuvoton NCT6687 Driver**
 
-This package contains the NCT6687 Drivers and installs them for using it with the Dynamix System Temperature Plugin.  
-  
+This plugin installs the NCT6687D kernel module for Unraid, enabling hardware monitoring and fan control on motherboards with the Nuvoton NCT6687-R chipset (common on MSI B550/B650/X670/Z690/Z790 and similar boards).
+
+**Supported features:**
+- Temperature monitoring (CPU, system, PCH, VRM)
+- Fan speed monitoring (CPU, pump, system fans)
+- Fan speed control (PWM) via sysfs or Dynamix System Autofan
+- Voltages monitoring
+
+**Fan Control:**
+After install, the nct6687 module exposes writable PWM controls:
+  /sys/class/hwmon/hwmon*/pwm[1-8]
+  /sys/class/hwmon/hwmon*/pwm[1-8]_enable
+
+Install the **Dynamix System Autofan** plugin from Apps to configure automatic fan curves.
+
+**Automatic updates:**
+This plugin includes the Plugin Update Helper, which pre-downloads the matching driver package when Unraid OS is updated, ensuring seamless compatibility.
+
 Source: https://github.com/Fred78290/nct6687d
 </INLINE>
 </FILE>
