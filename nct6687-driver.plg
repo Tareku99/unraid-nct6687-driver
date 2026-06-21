@@ -63,9 +63,9 @@ rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version
 
 NCT6687D kernel module for hardware monitoring and fan control on MSI and similar boards. Install **FanCtrl Plus** or **Dynamix System Autofan** from Apps for automatic fan curves.
 
-Source: https://github.com/Fred78290/nct6687d
-Packages: https://github.com/ich777/unraid-nct6687-driver/releases
-Plugin: https://github.com/Tareku99/unraid-nct6687-driver
+**Upstream:** https://github.com/Fred78290/nct6687d
+**Packages:** https://github.com/ich777/unraid-nct6687-driver/releases
+**Plugin:** https://github.com/Tareku99/unraid-nct6687-driver
 </INLINE>
 </FILE>
 
