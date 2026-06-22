@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
   <!ENTITY name      "nct6687-driver">
   <!ENTITY author    "Tareku99">
-  <!ENTITY version   "2026.06.22">
+  <!ENTITY version   "2026.06.23">
   <!ENTITY pluginURL "https://raw.githubusercontent.com/Tareku99/unraid-nct6687-driver/main/nct6687-driver.plg">
   <!ENTITY plugin    "/boot/config/plugins/nct6687-driver">
   <!ENTITY emhttp    "/usr/local/emhttp/plugins/nct6687-driver">
@@ -13,11 +13,11 @@
 
 <CHANGES>
 
-###2026.06.22
+###2026.06.23
 - Add boot-time alert if nct6687 module fails to load
 - Add Ko-fi funding link
 
-###2026.06.21
+###2026.06.22
 - Flatten XML entities to fix install failure on some Unraid systems
 - Add Dynamix System Autofan example to plugin README
 
