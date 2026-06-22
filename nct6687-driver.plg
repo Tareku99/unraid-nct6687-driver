@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
   <!ENTITY name      "nct6687-driver">
   <!ENTITY author    "Tareku99">
-  <!ENTITY version   "2026.06.23">
+  <!ENTITY version   "2026.06.24">
   <!ENTITY pluginURL "https://raw.githubusercontent.com/Tareku99/unraid-nct6687-driver/main/nct6687-driver.plg">
   <!ENTITY plugin    "/boot/config/plugins/nct6687-driver">
   <!ENTITY emhttp    "/usr/local/emhttp/plugins/nct6687-driver">
@@ -12,6 +12,9 @@
 <PLUGIN  name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" min="6.9.0">
 
 <CHANGES>
+
+###2026.06.24
+- Fix README formatting: use bullet list for links
 
 ###2026.06.23
 - Add boot-time alert if nct6687 module fails to load
@@ -67,9 +70,9 @@ rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version
 
 NCT6687D kernel module for hardware monitoring and fan control on MSI and similar boards. Install **FanCtrl Plus** or **Dynamix System Autofan** from Apps for automatic fan curves.
 
-**Upstream:** https://github.com/Fred78290/nct6687d
-**Packages:** https://github.com/ich777/unraid-nct6687-driver/releases
-**Plugin:** https://github.com/Tareku99/unraid-nct6687-driver
+- **Upstream:** https://github.com/Fred78290/nct6687d
+- **Packages:** https://github.com/ich777/unraid-nct6687-driver/releases
+- **Plugin:** https://github.com/Tareku99/unraid-nct6687-driver
 </INLINE>
 </FILE>
 
