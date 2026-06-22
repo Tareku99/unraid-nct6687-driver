@@ -158,7 +158,7 @@ fi
 
 # Send alert if module failed to load
 if ! lsmod | grep -q nct6687; then
-  /usr/local/emhttp/webGui/scripts/notify -e "NCT6687 Driver" -s "Driver failed to load" -d "The nct6687 module failed to load after install. Fan control will not work until this is fixed." -i alert -l "alert" 2>/dev/null
+  /usr/local/emhttp/webGui/scripts/notify -i alert -l alert -e "NCT6687 Driver" -s "Driver failed to load" -d "nct6687 is not loaded. Fan control unavailable." 2>/dev/null
 fi
 
 #Install icon
