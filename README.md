@@ -85,3 +85,7 @@ The Plugin Update Helper pre-downloads the matching driver before the update. If
 ## Support
 
 Support Thread: https://forums.unraid.net/topic/92865-support-ich777-nvidiadvbzfsiscsimft-kernel-helperbuilder-docker/
+
+## Development checks
+
+GitHub Actions checks the plugin XML, its embedded Bash, and the build helper’s syntax. For plugin support, use the upstream support thread above and include your Unraid version and kernel.
