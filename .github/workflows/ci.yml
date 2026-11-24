@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Validate plugin XML and shell syntax
+        id: validate
+        shell: bash
+        run: |
+          bash -n source/compile.sh
+          python3 - <<'PY'
+          import subprocess
+          import xml.etree.ElementTree as ET
+
+          root = ET.parse("nct6687-driver.plg").getroot()
+          if root.tag != "PLUGIN":
+              raise SystemExit("Expected a PLUGIN root element")
+
+          scripts = root.findall("./FILE[@Run='/bin/bash']")
+          if not scripts:
+              raise SystemExit("No embedded Bash scripts found")
+
+          for index, script in enumerate(scripts, start=1):
+              inline = script.find("INLINE")
+              if inline is None or not inline.text or not inline.text.strip():
+                  raise SystemExit(f"Missing inline Bash script in FILE #{index}")
+              print(f"Checking embedded Bash script #{index}", flush=True)
+              subprocess.run(["bash", "-n"], input=inline.text, text=True, check=True)
+          PY
+
+      - name: Report validation result
+        if: always()
+        uses: Tareku99/.github/.github/actions/ci-summary@04dd88f13b5c0b4a07d66ddd6da00522509abb52
+        with:
+          test-outcome: ${{ steps.validate.outcome }}
+          source-sha: ${{ github.sha }}
+          source-ref: ${{ github.head_ref || github.ref_name }}
